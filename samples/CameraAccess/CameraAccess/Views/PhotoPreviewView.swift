@@ -21,33 +21,46 @@ struct PhotoPreviewView: View {
   let onDismiss: () -> Void
 
   @State private var showShareSheet = false
+  @State private var showQAView = false
   @State private var dragOffset = CGSize.zero
 
   var body: some View {
-    ZStack {
-      // Semi-transparent background overlay
-      Color.black.opacity(0.8)
-        .ignoresSafeArea()
-        .onTapGesture {
-          dismissWithAnimation()
-        }
+    NavigationView {
+      ZStack {
+        // Semi-transparent background overlay
+        Color.black.opacity(0.8)
+          .ignoresSafeArea()
+          .onTapGesture {
+            dismissWithAnimation()
+          }
 
-      VStack(spacing: 20) {
-        photoDisplayView
+        VStack(spacing: 20) {
+          photoDisplayView
+
+          VStack(spacing: 12) {
+            CustomButton(title: "Share", style: .primary, isDisabled: false) {
+              showShareSheet = true
+            }
+
+            NavigationLink(destination: QAView(image: photo), isActive: $showQAView) {
+              EmptyView()
+            }
+
+            CustomButton(title: "Ask Question", style: .primary, isDisabled: false) {
+              showQAView = true
+            }
+          }
+        }
+        .padding()
+        .offset(dragOffset)
+        .animation(.spring(response: 0.6, dampingFraction: 0.8), value: dragOffset)
       }
-      .padding()
-      .offset(dragOffset)
-      .animation(.spring(response: 0.6, dampingFraction: 0.8), value: dragOffset)
-    }
-    .task {
-      try? await Task.sleep(nanoseconds: 100_000_000)
-      showShareSheet = true
+      .navigationBarHidden(true)
     }
     .sheet(
       isPresented: $showShareSheet,
       onDismiss: {
-        // When share sheet is dismissed, dismiss the entire preview
-        dismissWithAnimation()
+        // Keep the preview open after sharing
       }
     ) {
       ShareSheet(photo: photo)
