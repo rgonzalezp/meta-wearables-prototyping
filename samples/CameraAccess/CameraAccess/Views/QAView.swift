@@ -15,9 +15,8 @@ struct QAView: View {
   @Environment(\.dismiss) private var dismiss
   
   // Use the shared LLM service. In a real app, this might come from the environment.
-  // For now, we initialize it with a hardcoded OpenAI key (placeholder).
   @StateObject private var llmService = LLMService(
-    provider: OpenAIProvider(apiKey: "")
+    provider: OpenAIProvider(apiKey: Configuration.openAIKey)
   )
   
   @State private var inputText: String = ""

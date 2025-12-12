@@ -14,6 +14,8 @@
 		1DD2CD722EECC29800749D78 /* LLMProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2CD6C2EECC29800749D78 /* LLMProvider.swift */; };
 		1DD2CD732EECC29800749D78 /* OpenAIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2CD6E2EECC29800749D78 /* OpenAIProvider.swift */; };
 		1DD2CD752EECC4A400749D78 /* TypingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2CD742EECC4A400749D78 /* TypingIndicator.swift */; };
+		1DD2CD772EECC7E500749D78 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1DD2CD762EECC7E500749D78 /* Secrets.plist */; };
+		1DD2CD792EECC7F400749D78 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DD2CD782EECC7F400749D78 /* Configuration.swift */; };
 		8F2D23802E856711002D0588 /* DebugMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2D237F2E856711002D0588 /* DebugMenuViewModel.swift */; };
 		8F8F00782E8ACB4600A4BDAF /* WearablesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8F00772E8ACB4500A4BDAF /* WearablesViewModel.swift */; };
 		8FD96B7F2E6F0A9800F56AB1 /* CameraAccessApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD96B792E6F0A9800F56AB1 /* CameraAccessApp.swift */; };
@@ -74,6 +76,8 @@
 		1DD2CD6D2EECC29800749D78 /* LLMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LLMService.swift; sourceTree = "<group>"; };
 		1DD2CD6E2EECC29800749D78 /* OpenAIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIProvider.swift; sourceTree = "<group>"; };
 		1DD2CD742EECC4A400749D78 /* TypingIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypingIndicator.swift; sourceTree = "<group>"; };
+		1DD2CD762EECC7E500749D78 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		1DD2CD782EECC7F400749D78 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3A3A3A3A3A3A3A3A3A3A3A3A /* CameraAccess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CameraAccess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F2D237F2E856711002D0588 /* DebugMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugMenuViewModel.swift; sourceTree = "<group>"; };
 		8F8F00772E8ACB4500A4BDAF /* WearablesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WearablesViewModel.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 				8FD96B782E6F0A9800F56AB1 /* CameraAccess.entitlements */,
 				8FD96B792E6F0A9800F56AB1 /* CameraAccessApp.swift */,
 				8FD96B7B2E6F0A9800F56AB1 /* Info.plist */,
+				1DD2CD762EECC7E500749D78 /* Secrets.plist */,
 			);
 			path = CameraAccess;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				8FFD60392E84342C0035E446 /* TimeUtils.swift */,
+				1DD2CD782EECC7F400749D78 /* Configuration.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -348,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DD2CD772EECC7E500749D78 /* Secrets.plist in Resources */,
 				8FD96B8D2E6F0A9800F56AB1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,6 +379,7 @@
 				8FFD60542E849D0D0035E446 /* RegistrationView.swift in Sources */,
 				8FFD60342E8434070035E446 /* MediaPickerView.swift in Sources */,
 				1DD2CD6B2EECB4CA00749D78 /* MessageBubble.swift in Sources */,
+				1DD2CD792EECC7F400749D78 /* Configuration.swift in Sources */,
 				1DD2CD752EECC4A400749D78 /* TypingIndicator.swift in Sources */,
 				8FFD60352E8434070035E446 /* StatusText.swift in Sources */,
 				8FFD602C2E8433E20035E446 /* MockDeviceKitViewModel.swift in Sources */,
