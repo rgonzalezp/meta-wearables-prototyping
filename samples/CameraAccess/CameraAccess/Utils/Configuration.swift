@@ -18,5 +18,15 @@ struct Configuration {
         }
         return key
     }
+    
+    static var anthropicKey: String {
+        guard let path = Bundle.main.path(forResource: "Secrets", ofType: "plist"),
+              let dictionary = NSDictionary(contentsOfFile: path),
+              let key = dictionary["AnthropicKey"] as? String else {
+            print("WARNING: Secrets.plist not found or AnthropicKey missing.")
+            return ""
+        }
+        return key
+    }
 }
 
